@@ -1,0 +1,113 @@
+<html>
+
+<head></head>
+
+<body>
+    <h1 id="introTextHeading">Welcome to Search Flowers</h1>
+    <input id="textBox">
+    <button onclick="search()">Search</button>
+    <div id="resultsBox">
+        <ul id="resultsUL">
+
+        </ul>
+    </div>
+    <script>
+        const textBox = document.getElementById("textBox");
+        const introText = document.getElementById("introTextHeading");
+        const flowers = [
+            "anemone",
+            "amaryllis",
+            "amaranth",
+            "aster",
+            "azalea",
+            "babys breath",
+            "begonia",
+            "bellflower",
+            "bergamot",
+            "bird of paradise",
+            "bluebell",
+            "bottlebrush",
+            "buttercup",
+            "camellias",
+            "carnation",
+            "chrysantemum",
+            "columbine",
+            "clover",
+            "crocus",
+            "daisy",
+            "dahlia",
+            "daffodil",
+            "delphinium",
+            "edelweiss",
+            "primrose",
+            "forget me not",
+            "foxglove",
+            "freesia",
+            "gerbera daisy",
+            "gladiolus",
+            "hibiscus",
+            "heather",
+            "hyacinth",
+            "holly",
+            "iris",
+            "jasmine",
+            "ladys slipper",
+            "lavender",
+            "lilac",
+            "lily",
+            "lotus flower",
+            "marigold",
+            "marjoram",
+            "mimosa",
+            "narcissus",
+            "orange blossom",
+            "orchid",
+            "peach blossom",
+            "peony",
+            "petunia",
+            "rhododendron",
+            "rosemary",
+            "roses",
+            "sage",
+            "snapdragon",
+            "sunflower",
+            "tansy",
+            "thistle",
+            "thyme",
+            "tulip",
+            "violet",
+            "water lily",
+            "zinnia"
+        ]
+
+        function addToList(input) {
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(input);
+            node.appendChild(textnode);
+            document.getElementById("resultsUL").appendChild(node);
+
+        }
+
+        function search() {
+            removeOldList();
+            let counter = 0;
+            let searchText = textBox.value;
+            textBox.value = "";
+
+            for (let eachFlower of flowers) {
+                if (eachFlower.includes(searchText)) {
+                    addToList(eachFlower)
+                    counter++;
+                } }
+            if (counter == 0){
+                    addToList(searchText + ' Not Found')
+                }
+        }
+
+        function removeOldList() {
+            document.getElementById("resultsUL").innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>
