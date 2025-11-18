@@ -1,6 +1,8 @@
 <html>
 
-<head></head>
+<head>
+    <title>Search for a Flower</title>
+</head>
 
 <body>
     <h1 id="introTextHeading">Welcome to Search Flowers</h1>
@@ -92,6 +94,7 @@
             removeOldList();
             let counter = 0;
             let searchText = textBox.value;
+            searchText = searchText.toLowerCase();
             textBox.value = "";
 
             for (let eachFlower of flowers) {
