@@ -157,7 +157,7 @@
             if (!searchText) {
                 removeOldList();
                 return "end early"
-            }
+            } else {
 
             for (let eachFlower of flowers) {
                 if (eachFlower.includes(searchText)) {
@@ -167,7 +167,7 @@
             if (counter == 0){
                     addToList(searchText + ' Not Found')
                 }
-        }
+        }}
 
         function removeOldList() {
             document.getElementById("resultsUL").innerHTML = ""
