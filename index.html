@@ -153,6 +153,11 @@
             let searchText = textBox.value;
             searchText = searchText.toLowerCase();
 
+            if (searchText = "") {
+                removeOldList();
+                return "end early"
+            }
+
             for (let eachFlower of flowers) {
                 if (eachFlower.includes(searchText)) {
                     addToList(eachFlower)
