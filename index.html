@@ -152,8 +152,9 @@
             let counter = 0;
             let searchText = textBox.value;
             searchText = searchText.toLowerCase();
+            searchText = searchText.trim();
 
-            if (searchText = "") {
+            if (!searchText) {
                 removeOldList();
                 return "end early"
             }
