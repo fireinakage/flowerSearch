@@ -3,7 +3,7 @@
 <head>
     <title>Search for a Flower</title>
 </head>
-s
+
 <body>
     <h1 id="introTextHeading">Welcome to Search Flowers</h1>
     <input type="text" id="textBox" oninput="search()">
@@ -167,7 +167,7 @@ s
             let searchText = textBox.value;
             searchText = searchText.toLowerCase();
             searchText = searchText.trim();
-            flowers.sort()
+            flowers.sort((a,b) => a.name.localeCompare(b.name))
 
             if (!searchText) {
                 removeOldList();
